@@ -32,4 +32,16 @@ gem 'pundit'
 
 	```rails g active_admin:install```
 
-xnjxjn
+Генератор создаст эти файлы:
+```
+app/admin/dashboard.rb
+app/assets/javascripts/active_admin.js.coffee
+app/assets/stylesheets/active_admin.scss
+config/initializers/active_admin.rb
+```
+Теперь запустите миграции и сидирование вашей базы данных, после чего запустите сервер:
+```
+rake db:migrate
+rake db:seed
+rails server
+```
