@@ -39,9 +39,22 @@ app/assets/javascripts/active_admin.js.coffee
 app/assets/stylesheets/active_admin.scss
 config/initializers/active_admin.rb
 ```
-Теперь запустите миграции и сидирование вашей базы данных, после чего запустите сервер:
+Теперь запустите миграции и заполнение вашей базы данных, после чего запустите сервер:
 ```
 rake db:migrate
 rake db:seed
 rails server
 ```
+Перейдите по ссылке ```http://localhost:3000/admin``` и авторизуйтесь по следующим данным:
+
+* **Пользователь**: admin@example.com
+* **Пароль**: password
+
+Вуаля! Вы находитесь в вашей новосозданной Active Admin  панели.
+
+Чтобы зарегистрировать существующую модель в Active Admin введите в терминале:
+```
+rails g active_admin:resource MyModel
+```
+Это создаст файл ```app/admin/my_model.rb``` для настройки интерфейса. Обновите страницу в браузере, чтобы увидеть его.
+## Обновление
