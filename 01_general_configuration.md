@@ -84,4 +84,41 @@ end
       config.load_paths = [File.join(Rails.root, "app", "ui")]
     end
    
-   
+
+Комментарии
+-----------
+
+Изначально Active Admin включает комментарии для ресурсов. Иногда, это не нужно. Чтобы отключить комментарии:
+
+    # For the entire application:
+    ActiveAdmin.setup do |config|
+      config.comments = false
+    end
+    
+    # For a namespace:
+    ActiveAdmin.setup do |config|
+      config.namespace :admin do |admin|
+        admin.comments = false
+      end
+    end
+    
+    # For a given resource:
+    ActiveAdmin.register Post do
+      config.comments = false
+    end
+
+Вы можете изменить имя, по которым комментарии будут зарегистрированы:
+
+    config.comments_registration_name = 'AdminComment'
+
+Также вы можете изменить порядок и поле сортировки комментариев:
+
+    config.comments_order = 'created_at ASC'
+
+Можете отключить отображение ссылки на главную страницу комментариев в верхнем меню:
+
+    config.comments_menu = false
+
+Для изменения пункта меню комментариев:
+
+    config.comments_menu = { parent: 'Admin', priority: 1 }
