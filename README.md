@@ -32,3 +32,4 @@ gem 'pundit'
 
 	```rails g active_admin:install```
 
+xnjxjn
