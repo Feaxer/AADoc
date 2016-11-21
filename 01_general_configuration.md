@@ -122,3 +122,19 @@ end
 Для изменения пункта меню комментариев:
 
     config.comments_menu = { parent: 'Admin', priority: 1 }
+
+Utility Navigation
+------------------
+
+"Utility Navigation" отображается в верхнем правом углю и обычно содержит имя текущего пользователя и ссылку для выхода. В любом случае, "Utility Navigation", такое же, как и любое другое меню в системе. Вы можете указать ваше собственное меню, которое будет рендериться в этом месте.
+
+    ActiveAdmin.setup do |config|
+      config.namespace :admin do |admin|
+        admin.build_menu :utility_navigation do |menu|
+          menu.add label: "ActiveAdmin.info", url: "http://www.activeadmin.info",
+                                              html_options: { target: :blank }
+          admin.add_current_user_to_menu  menu
+          admin.add_logout_button_to_menu menu
+        end
+      end
+    end
